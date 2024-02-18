@@ -19,7 +19,7 @@
             <p>
             <!-- Step 9: Part one -->
             <label for="reservation_date">Date:</label>
-            <input type="text" placeholder="Reservation date" maxlength="200" required="" id="reservation_date">
+            <input type="date" placeholder="Reservation date" maxlength="200" required="" id="reservation_date">
             </p>
       
             <p>
@@ -73,10 +73,10 @@
         bookings = ''
         
         /* Step 11: Part three */
-        for(let item in data){
+        for(let item of data){
           console.log(items.fields);
           reserved_slots.push(items.fields.reservations_slot);
-          bookings = `<p>${item.fields.first_name} - ${formatTime(item.fields.reservation_slot)}</p>`
+          bookings += `<p>${item.fields.first_name} - ${formatTime(item.fields.reservation_slot)}</p>`
         }
 
 
